@@ -1,12 +1,12 @@
 function General ({name, email, phoneNumber}) {
     return (
-       <div className="container-fluid">
+       <div className="container">
            <div className="row">
-               <div className="col">{name}</div>
+               <h1 className="col text-center">{name}</h1>
            </div>
            <div className="row">
-               <div className="col">{email}</div>
-               <div className="col">{phoneNumber}</div>
+               <h5 className="col text-center">{email}</h5>
+               <h5 className="col text-center">{phoneNumber}</h5>
            </div>
        </div>
     )

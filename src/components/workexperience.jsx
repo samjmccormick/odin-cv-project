@@ -1,4 +1,6 @@
-function Education ({school, dates, degree, info}) {
+
+
+function WorkExperience ({company, dates, title, info}) {
     const infoMap = info.map((item) => {
         return <li key={item}>{item}</li>
     })
@@ -6,11 +8,11 @@ function Education ({school, dates, degree, info}) {
  return (
     <div className="container">
         <div className="row">
-            <h3 className="col">{school}</h3>
+            <h3 className="col">{title}</h3>
             <h4 className="col text-end">{dates}</h4>
         </div>
         <div className="row">
-            <div className="col">{degree}</div>
+            <div className="col">{company}</div>
         </div>
         <div className="row">
             <ul>
@@ -21,4 +23,4 @@ function Education ({school, dates, degree, info}) {
  )
 }
 
-export default Education
+export default WorkExperience
