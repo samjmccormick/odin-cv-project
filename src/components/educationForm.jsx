@@ -1,14 +1,14 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 
 
-function EducationForm ({school, dates, degree, info, changeSchool, changeDates, onClick, changeDegree}) {
+function EducationForm ({school, dates, degree, info, changeSchool, changeDates, changeDegree, onClick}) {
     return (
         <Container>
             <Form>
                 <Row>
                     <Col>
                         <Form.Group className="mb-3" controlId="formGroupSchool">
-                            <Form.Label>school</Form.Label>
+                            <Form.Label>University or College</Form.Label>
                             <Form.Control type="text" placeholder="Enter your undergraduate institution" value={school} onChange={changeSchool} />
                         </Form.Group>
                     </Col>

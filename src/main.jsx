@@ -8,6 +8,7 @@ import WorkExperience from './components/workexperience'
 import GeneralForm from './components/generalForm'
 import { Container } from 'react-bootstrap'
 import GeneralCombined from './components/generalcombined'
+import EducationCombined from './components/educationCombined'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,7 +17,7 @@ createRoot(document.getElementById('root')).render(
       <div className="row">
               <h3 className="col text-center">Education</h3>
           </div>
-      <Education school="montana" dates="2016" degree="mechanical engineering" info={["testing testing", "testing testint", "more adn more"]} />
+      <EducationCombined />
       <div className="row">
               <h3 className="col text-center">Work Experience</h3>
           </div>

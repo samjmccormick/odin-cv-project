@@ -1,4 +1,6 @@
-function Education ({school, dates, degree, info}) {
+import { Button } from "react-bootstrap"
+
+function Education ({school, dates, degree, info, onClick}) {
     const infoMap = info.map((item) => {
         return <li key={item}>{item}</li>
     })
@@ -17,6 +19,7 @@ function Education ({school, dates, degree, info}) {
                 {infoMap}
             </ul>
         </div>
+        <Button variant="primary" type="submit" onClick={onClick}>Edit</Button>
     </div>
  )
 }
