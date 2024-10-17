@@ -7,11 +7,12 @@ import General from './components/general'
 import WorkExperience from './components/workexperience'
 import GeneralForm from './components/generalForm'
 import { Container } from 'react-bootstrap'
+import GeneralCombined from './components/generalcombined'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Container className='body'>
-      <GeneralForm />
+      <GeneralCombined />
       <div className="row">
               <h3 className="col text-center">Education</h3>
           </div>
