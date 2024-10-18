@@ -1,5 +1,30 @@
+import { useState } from "react"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 
+function ListInput () {
+    const [counter, setCounter] = useState(0);
+    function handleClick () {
+        setCounter(counter + 1)
+    };
+    return (
+        <>
+        {Array.from(Array(counter)).map((c, index) => {
+            return (
+                <Row>
+                    <Col>
+                        <Form.Group className="mb-3" controlId={"formScho olInfo" + counter}>
+                            <Form.Label>Description of Degree</Form.Label>
+                            <Form.Control type="text" placeholder="Describe your education" value={degree} onChange={changeDegree} />
+                        </Form.Group>
+                    </Col>
+                </Row>
+            )
+        })
+            }
+        <Button variant="secondary" type="button" onClick={handleClick} >Add Bullet Point</Button>
+        </>
+    )
+}
 
 function EducationForm ({school, dates, degree, info, changeSchool, changeDates, changeDegree, onClick}) {
     return (
@@ -21,12 +46,13 @@ function EducationForm ({school, dates, degree, info, changeSchool, changeDates,
                 </Row>
                 <Row>
                     <Col>
-                    <Form.Group className="mb-3" controlId="formScoolDegree">
+                        <Form.Group className="mb-3" controlId="formScoolDegree">
                             <Form.Label>Degree</Form.Label>
                             <Form.Control type="text" placeholder="Enter your degree" value={degree} onChange={changeDegree} />
                         </Form.Group>
                     </Col>
                 </Row>
+        
                 <Button variant="primary" type="submit" onClick={onClick}>Submit</Button>
             </Form>
         </Container>
