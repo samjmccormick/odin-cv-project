@@ -6,8 +6,8 @@ function EducationCombined() {
   const [school, setSchool] = useState("");
   const [dates, setDates] = useState("");
   const [degree, setDegree] = useState("");
-  const [infoList, setInfoList] = useState({ info });
   const [isSubmit, setIsSubmit] = useState(false);
+  const [infoList, setInfoList] = useState([{ bullet: "" }]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +18,13 @@ function EducationCombined() {
     setIsSubmit(false);
   }
 
+  function handleInfoChange(e, index) {
+    const { name, value } = e.target;
+    const list = [...infoList];
+    list[index][name] = value;
+    setInfoList(list);
+  }
+
   return (
     <>
       {!isSubmit && (
@@ -25,10 +32,11 @@ function EducationCombined() {
           school={school}
           dates={dates}
           degree={degree}
-          info={infoList}
+          infoList={infoList}
           changeSchool={(e) => setSchool(e.target.value)}
           changeDates={(e) => setDates(e.target.value)}
           changeDegree={(e) => setDegree(e.target.value)}
+          changeInfo={(e) => handleInfoChange(e)}
           onSubmit={handleSubmit}
         />
       )}
@@ -37,7 +45,6 @@ function EducationCombined() {
           school={school}
           dates={dates}
           degree={degree}
-          info={info}
           onClick={handleEdit}
         />
       )}
