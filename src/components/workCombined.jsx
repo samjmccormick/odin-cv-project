@@ -1,11 +1,11 @@
 import { useState } from "react";
-import EducationForm from "./educationForm";
-import Education from "./education";
+import WorkForm from "./workForm";
+import WorkExperience from "./workexperience";
 
-function EducationCombined() {
-  const [school, setSchool] = useState("");
+function WorkCombined() {
+  const [title, setTitle] = useState("");
   const [dates, setDates] = useState("");
-  const [degree, setDegree] = useState("");
+  const [company, setCompany] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [infoList, setInfoList] = useState([{ bullet: "" }]);
 
@@ -38,14 +38,14 @@ function EducationCombined() {
   return (
     <>
       {!isSubmit && (
-        <EducationForm
-          school={school}
+        <WorkForm
+          title={title}
           dates={dates}
-          degree={degree}
+          company={company}
           infoList={infoList}
-          changeSchool={(e) => setSchool(e.target.value)}
+          changetitle={(e) => setTitle(e.target.value)}
           changeDates={(e) => setDates(e.target.value)}
-          changeDegree={(e) => setDegree(e.target.value)}
+          changecompany={(e) => setCompany(e.target.value)}
           changeInfo={handleInfoChange}
           clickAdd={handleAddInfo}
           clickRemove={handleRemoveInfo}
@@ -53,10 +53,10 @@ function EducationCombined() {
         />
       )}
       {isSubmit && (
-        <Education
-          school={school}
+        <WorkExperience
+          title={title}
           dates={dates}
-          degree={degree}
+          company={company}
           info={infoList}
           onClick={handleEdit}
         />
@@ -65,4 +65,4 @@ function EducationCombined() {
   );
 }
 
-export default EducationCombined;
+export default WorkCombined;

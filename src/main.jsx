@@ -1,11 +1,31 @@
-import { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import WorkExperience from "./components/workexperience";
-import { Container } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import GeneralCombined from "./components/generalcombined";
 import EducationCombined from "./components/educationCombined";
+import WorkCombined from "./components/workCombined";
+
+function AddWorkExperience() {
+  const [workList, setWorkList] = useState([<WorkCombined key={0} />]);
+  function handleAddExperience(e) {
+    setWorkList([...workList, <WorkCombined key={workList.length} />]);
+  }
+  return (
+    <>
+      {workList}
+      <Button
+        className="mt-3"
+        onClick={handleAddExperience}
+        type="button"
+        variant="success"
+      >
+        Add Experience
+      </Button>
+    </>
+  );
+}
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -18,16 +38,7 @@ createRoot(document.getElementById("root")).render(
       <div className="row">
         <h3 className="col text-center">Work Experience</h3>
       </div>
-      <WorkExperience
-        company="kiewit"
-        dates="2022"
-        title="bad bitch"
-        info={[
-          "getting money",
-          "Getting paper",
-          "essentially running everything in my life",
-        ]}
-      />
+      <AddWorkExperience />
     </Container>
   </StrictMode>
 );

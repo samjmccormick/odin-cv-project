@@ -1,14 +1,14 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import InputGroupText from "react-bootstrap/esm/InputGroupText";
 
-function EducationForm({
-  school,
+function WorkForm({
+  title,
   dates,
-  degree,
+  company,
   infoList,
-  changeSchool,
+  changeTitle,
   changeDates,
-  changeDegree,
+  changeCompany,
   changeInfo,
   onSubmit,
   clickRemove,
@@ -19,25 +19,22 @@ function EducationForm({
       <Form>
         <Row>
           <Col>
-            <Form.Group className="mb-3" controlId="formGroupSchool">
-              <Form.Label>University or College</Form.Label>
+            <Form.Group className="mb-3" controlId="formGroupTitle">
+              <Form.Label>Title</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your undergraduate institution"
-                value={school}
-                onChange={changeSchool}
+                placeholder="Enter your job title"
+                value={title}
+                onChange={changeTitle}
               />
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group
-              className="mb-3"
-              controlId="formGroupSchoolGraduationDate"
-            >
-              <Form.Label>Graduation Year</Form.Label>
+            <Form.Group className="mb-3" controlId="formGroupDate">
+              <Form.Label>Dates Employed</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your graduation year"
+                placeholder="Enter the dates you were employed"
                 value={dates}
                 onChange={changeDates}
               />
@@ -46,13 +43,13 @@ function EducationForm({
         </Row>
         <Row className="w-50">
           <Col>
-            <Form.Group className="mb-3" controlId="formGroupScoolDegree">
-              <Form.Label>Degree</Form.Label>
+            <Form.Group className="mb-3" controlId="formGroupScoolCompany">
+              <Form.Label>Employer</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter your degree"
-                value={degree}
-                onChange={changeDegree}
+                placeholder="Enter your employer"
+                value={company}
+                onChange={changeCompany}
               />
             </Form.Group>
           </Col>
@@ -67,7 +64,7 @@ function EducationForm({
                   <Form.Control
                     name="bullet"
                     type="text"
-                    placeholder="Describe skills learned through your education"
+                    placeholder="Describe your job duties"
                     value={singleInfo.bullet}
                     onChange={(e) => changeInfo(e, index)}
                   />
@@ -103,4 +100,4 @@ function EducationForm({
   );
 }
 
-export default EducationForm;
+export default WorkForm;
