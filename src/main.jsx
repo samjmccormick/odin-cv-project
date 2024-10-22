@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Container, Form, Col, Row } from "react-bootstrap";
-import GeneralCombined from "./components/generalcombined";
-import EducationCombined from "./components/educationCombined";
-import WorkCombined from "./components/workCombined";
+import GeneralCombined from "./components/general/generalcombined";
+import EducationCombined from "./components/education/educationCombined";
+import WorkCombined from "./components/work/workCombined";
 
 function AddWorkExperience() {
   const [workList, setWorkList] = useState([
