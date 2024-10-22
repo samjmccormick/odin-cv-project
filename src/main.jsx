@@ -2,19 +2,49 @@ import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Container, Form, Col, Row } from "react-bootstrap";
 import GeneralCombined from "./components/generalcombined";
 import EducationCombined from "./components/educationCombined";
 import WorkCombined from "./components/workCombined";
 
 function AddWorkExperience() {
-  const [workList, setWorkList] = useState([<WorkCombined key={0} />]);
-  function handleAddExperience(e) {
-    setWorkList([...workList, <WorkCombined key={workList.length} />]);
+  const [workList, setWorkList] = useState([
+    <Col>
+      <WorkCombined key={0} />
+    </Col>,
+  ]);
+
+  function handleRemove(index) {
+    const list = [...workList];
+    list.splice(index, 1);
+    setWorkList(list);
+  }
+  function handleAddExperience() {
+    setWorkList([
+      ...workList,
+      <Col>
+        <WorkCombined key={workList.length} />
+      </Col>,
+    ]);
   }
   return (
     <>
-      {workList}
+      {workList.map((singleWork, index) => (
+        <Row key={index}>
+          {singleWork}
+          {workList.length !== 1 && (
+            <Col xs={2}>
+              <Button
+                variant="danger"
+                type="button"
+                onClick={() => handleRemove(WorkCombined.id)}
+              >
+                Remove
+              </Button>
+            </Col>
+          )}
+        </Row>
+      ))}
       <Button
         className="mt-3"
         onClick={handleAddExperience}

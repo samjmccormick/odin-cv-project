@@ -11,6 +11,9 @@ function GeneralForm({
 }) {
   return (
     <Container>
+      <Row className="text-center">
+        <h2>Personal Information</h2>
+      </Row>
       <Form>
         <Row className="justify-content-center">
           <Col sm={5}>

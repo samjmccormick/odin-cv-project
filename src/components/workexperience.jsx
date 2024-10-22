@@ -1,6 +1,8 @@
-function WorkExperience({ company, dates, title, info }) {
+import { Button } from "react-bootstrap";
+
+function WorkExperience({ company, dates, title, info, onClick }) {
   const infoMap = info.map((item, index) => {
-    return <li key={index}>{item.bullet}</li>;
+    return item.bullet !== "" && <li key={index}>{item.bullet}</li>;
   });
 
   return (
@@ -15,6 +17,9 @@ function WorkExperience({ company, dates, title, info }) {
       <div className="row">
         <ul>{infoMap}</ul>
       </div>
+      <Button variant="primary" type="button" onClick={onClick}>
+        Edit
+      </Button>
     </div>
   );
 }

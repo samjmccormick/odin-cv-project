@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 
 function Education({ school, dates, degree, info, onClick }) {
   const infoMap = info.map((item, index) => {
-    return <li key={index}>{item.bullet}</li>;
+    return item.bullet !== "" && <li key={index}>{item.bullet}</li>;
   });
 
   return (

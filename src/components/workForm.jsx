@@ -83,7 +83,7 @@ function WorkForm({
               )}
             </Row>
             {infoList.length - 1 === index && (
-              <div className="mb-2 ms-4">
+              <div className="mb-2 ms-4" key={index}>
                 <Button variant="secondary" type="button" onClick={clickAdd}>
                   Add Info
                 </Button>

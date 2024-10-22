@@ -43,9 +43,9 @@ function WorkCombined() {
           dates={dates}
           company={company}
           infoList={infoList}
-          changetitle={(e) => setTitle(e.target.value)}
+          changeTitle={(e) => setTitle(e.target.value)}
           changeDates={(e) => setDates(e.target.value)}
-          changecompany={(e) => setCompany(e.target.value)}
+          changeCompany={(e) => setCompany(e.target.value)}
           changeInfo={handleInfoChange}
           clickAdd={handleAddInfo}
           clickRemove={handleRemoveInfo}
