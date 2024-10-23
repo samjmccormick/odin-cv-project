@@ -2,14 +2,14 @@ import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Container, Form, Col, Row } from "react-bootstrap";
+import { Button, Container, Col, Row } from "react-bootstrap";
 import GeneralCombined from "./components/general/generalcombined";
 import EducationCombined from "./components/education/educationCombined";
 import WorkCombined from "./components/work/workCombined";
 
 function AddWorkExperience() {
   const [workList, setWorkList] = useState([
-    <Col>
+    <Col key={0}>
       <WorkCombined key={0} />
     </Col>,
   ]);
@@ -22,7 +22,7 @@ function AddWorkExperience() {
   function handleAddExperience() {
     setWorkList([
       ...workList,
-      <Col>
+      <Col key={workList.length}>
         <WorkCombined key={workList.length} />
       </Col>,
     ]);
